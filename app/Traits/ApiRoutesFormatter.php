@@ -1,9 +1,11 @@
 <?php
 
-namespace Traits;
+namespace app\Traits;
 
-trait ResponseFormatter {
-    public function responseFormatter($code, $message, $data = null){
+trait ApiResponseFormatter
+{
+    public function apiResponse($code = 200, $message = "success", $data = [])
+    {
         return json_encode([
             "code" => $code,
             "message" => $message,
